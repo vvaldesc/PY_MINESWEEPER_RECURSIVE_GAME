@@ -2,7 +2,7 @@ import numpy as np
 
 table=np.random.randint(-1, 1, size=(8, 8))
 
-def count_cell_mines(table,i=0,j=0,checked=False):
+def count_cell_mines(table,i=0,j=0):
     print(table[i][j])
     if i < table.shape[0] - 1:
         i = i + 1
