@@ -11,7 +11,7 @@ def binary_array_search(array,n:int,i=0):
             array = np.delete(array,0)
             return binary_array_search(array,n,i+1)
     else:
-        return 'No se encontró la instancia'
+        return False
 
 
 print(binary_array_search(a,1))
