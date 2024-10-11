@@ -8,8 +8,7 @@ def binary_array_search(array,n:int,i=0):
         if array[0] == n:
             return i
         else:
-            array = np.delete(array,0)
-            return binary_array_search(array,n,i+1)
+            return binary_array_search(array[1:],n,i+1)
     else:
         return False
 
