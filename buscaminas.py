@@ -9,15 +9,15 @@ searching_vectors = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0
 MAX = 8
 game_table = np.zeros((MAX, MAX), dtype=int)
 
-def how_many_mines(table,i,j,searching_vectors,c=0):
-    if not searching_vectors:
+def how_many_mines(table, i, j, search_vectors, c=0):
+    if not search_vectors:
         return c
     else:
-        ni, nj = i + searching_vectors[0][0], j + searching_vectors[0][1]
+        ni, nj = i + search_vectors[0][0], j + search_vectors[0][1]
         if 0 <= ni < table.shape[0] and 0 <= nj < table.shape[1]:
             if table[ni,nj] == -1:
                 c += 1
-        return how_many_mines(table,i,j,searching_vectors[1:],c)
+        return how_many_mines(table, i, j, search_vectors[1:], c)
 
 def count_cell_mines(table,i=0,j=0):
     if table[i][j] != -1:
@@ -50,6 +50,7 @@ def descubre(table,i,j):
         def no_mines():
             region = minesweeper_table[max(0, i - 1):min(i + 2, 8),max(0, j - 1):min(j + 2, 8)]
             table[max(0, i - 1):min(i + 2, 8), max(0, j - 1):min(j + 2, 8)] = region
+            #No entiendo bien el warning del segundo parámetro
             region = np.where(region == -1, 0, region)
             game_table[max(0, i - 1):min(i + 2, 8), max(0, j - 1):min(j + 2, 8)] = region
             return False, table
@@ -74,36 +75,44 @@ def descubre(table,i,j):
 def minesweeper():
     table = np.random.randint(-1, 1, size=(MAX, MAX))
     finish = False
-    print('BUSCAMINAS')
+    print('MINESWEEPER\n\n')
     sleep(1)
+    print('\nTHESE ARE THE MINES')
     print(table)
+    sleep(3)
+    print('\nTHIS IS YOUR GAME')
     print(game_table)
+    sleep(1)
     while not finish:
         try:
             j, i = 0, 0
 
             while True:
                 try:
-                    i = int(input('Dame la fila :'))
-                    j = int(input('Dame la columna :'))
+                    i = int(input('\nIntruduce row :'))
+                    j = int(input('Intruduce column :'))
                     if i < MAX and j < MAX:
                         break
                     else:
-                        print(f"Fuera del tablero")
+                        print(f"Out of bounds!\n")
                 except ValueError as e:
-                    print(f"Error: {e}. Por favor, ingresa un número válido.")
+                    print(f"Error: {e}. Please input a valid number.")
 
             if i >= MAX or j >= MAX:
                 raise ValueError
             finish, table = descubre(table, i, j)
-            print(game_table)
+            print("\n")
+
             if finish:
                 print(table)
                 print("BOOOOOOOOOOOMMM YOU LOST")
+            else:
+                print("CONTINUE!\n")
+                print(game_table)
             sleep(1)
 
         except ValueError as e:
-            print(f"Error: {e}. Por favor, ingresa un número válido.")
+            print(f"Error: {e}. Please input a valid number.")
 
 
 minesweeper()
