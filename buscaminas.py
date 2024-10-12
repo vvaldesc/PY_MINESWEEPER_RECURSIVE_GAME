@@ -3,7 +3,9 @@ from logging import exception
 import numpy as np
 
 searching_vectors = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
-
+# MAX limits the size of the board because it is specified in the 'descubre' exercise section
+# The rest of the functions treat the matrix as a dynamic matrix
+MAX = 8
 
 def how_many_mines(table,i,j,searching_vectors,c=0):
     if not searching_vectors:
@@ -65,9 +67,8 @@ def descubre(table,i,j):
 
         return evaluate_cases(table[i][j])
 
-
 def minesweeper():
-    table = np.random.randint(-1, 1, size=(8, 8))
+    table = np.random.randint(-1, 1, size=(MAX, MAX))
     finish = False
     print('Minesweeper')
     #print(table)
