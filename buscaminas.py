@@ -1,4 +1,5 @@
 from logging import exception
+from time import sleep
 
 import numpy as np
 
@@ -6,6 +7,7 @@ searching_vectors = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0
 # MAX limits the size of the board because it is specified in the 'descubre' exercise section
 # The rest of the functions treat the matrix as a dynamic matrix
 MAX = 8
+game_table = np.zeros((MAX, MAX), dtype=int)
 
 def how_many_mines(table,i,j,searching_vectors,c=0):
     if not searching_vectors:
@@ -40,25 +42,29 @@ def descubre(table,i,j):
         #Me veo obligado a hacer una copia de table ya que por lo visto el parámetro se envía por referencia
         minesweeper_table =  count_cell_mines(table_aux)
         del table_aux
-        #print(table)
-        #print(minesweeper_table)
 
         def mine_near():
-            table[i][j] = -2
+            game_table[i][j] = -2
             return False, table
+
         def no_mines():
-            table[max(0, i - 1):min(i + 2, 8), max(0, j - 1):min(j + 2, 8)] = \
-                minesweeper_table[max(0, i - 1):min(i + 2, 8),
-                max(0, j - 1):min(j + 2, 8)]
+            region = minesweeper_table[max(0, i - 1):min(i + 2, 8),max(0, j - 1):min(j + 2, 8)]
+            print(region)
+            table[max(0, i - 1):min(i + 2, 8), max(0, j - 1):min(j + 2, 8)] = region
+            region = np.where(region == -1, 0, region)
+            print(region)
+            game_table[max(0, i - 1):min(i + 2, 8), max(0, j - 1):min(j + 2, 8)] = region
             return False, table
+
         def mine():
-            print('BUUUUUMMMMM!!!!')
             return True, table
+
         switch = [
             (lambda x: x == -1, mine),
             (lambda x: x == 0, no_mines),
             (lambda x: x > 0, mine_near)
         ]
+
         def evaluate_cases(value):
             for case, action in switch:
                 if case(value):
@@ -70,15 +76,34 @@ def descubre(table,i,j):
 def minesweeper():
     table = np.random.randint(-1, 1, size=(MAX, MAX))
     finish = False
-    print('Minesweeper')
-    #print(table)
+    print('BUSCAMINAS')
+    sleep(1)
+    print(table)
+    print(game_table)
     while not finish:
         try:
-            i = int(input('Dame la fila'))
-            j = int(input('Dame la columna'))
+            j, i = 0, 0
+
+            while True:
+                try:
+                    i = int(input('Dame la fila :'))
+                    j = int(input('Dame la columna :'))
+                    if i < MAX and j < MAX:
+                        break
+                    else:
+                        print(f"Fuera del tablero")
+                except ValueError:
+                    print(f"Error: {e}. Por favor, ingresa un número válido.")
+
+            if i >= MAX or j >= MAX:
+                raise ValueError
             finish, table = descubre(table, i, j)
-            print("NUEVO TABLEROO")
-            print(table)
+            print(game_table)
+            if finish:
+                print(table)
+                print("BOOOOOOOOOOOMMM YOU LOST")
+            sleep(1)
+
         except ValueError as e:
             print(f"Error: {e}. Por favor, ingresa un número válido.")
 
