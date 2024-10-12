@@ -49,10 +49,8 @@ def descubre(table,i,j):
 
         def no_mines():
             region = minesweeper_table[max(0, i - 1):min(i + 2, 8),max(0, j - 1):min(j + 2, 8)]
-            print(region)
             table[max(0, i - 1):min(i + 2, 8), max(0, j - 1):min(j + 2, 8)] = region
             region = np.where(region == -1, 0, region)
-            print(region)
             game_table[max(0, i - 1):min(i + 2, 8), max(0, j - 1):min(j + 2, 8)] = region
             return False, table
 
@@ -92,7 +90,7 @@ def minesweeper():
                         break
                     else:
                         print(f"Fuera del tablero")
-                except ValueError:
+                except ValueError as e:
                     print(f"Error: {e}. Por favor, ingresa un número válido.")
 
             if i >= MAX or j >= MAX:
