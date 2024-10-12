@@ -1,6 +1,5 @@
 from logging import exception
 from time import sleep
-
 import numpy as np
 
 searching_vectors = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
@@ -9,6 +8,7 @@ searching_vectors = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0
 MAX = 8
 game_table = np.zeros((MAX, MAX), dtype=int)
 
+#This function counts the number of mines near the selected cell recursively using 'searching_vectors' vectors
 def how_many_mines(table, i, j, search_vectors, c=0):
     if not search_vectors:
         return c
@@ -19,6 +19,7 @@ def how_many_mines(table, i, j, search_vectors, c=0):
                 c += 1
         return how_many_mines(table, i, j, search_vectors[1:], c)
 
+#This function edits the minesweeper table to create the table that shows where are the bombs to the client.
 def count_cell_mines(table,i=0,j=0):
     if table[i][j] != -1:
         table[i][j] = how_many_mines(table,i,j,searching_vectors)
@@ -33,6 +34,7 @@ def count_cell_mines(table,i=0,j=0):
         else:
             return table
 
+#This function replace the values of the selected depending on the value of the cell
 def descubre(table,i,j):
     if table.shape != (8, 8):
         exception('Table dimensions are incorrect')
@@ -72,6 +74,7 @@ def descubre(table,i,j):
 
         return evaluate_cases(table[i][j])
 
+#This function is the mail function of the game
 def minesweeper():
     table = np.random.randint(-1, 1, size=(MAX, MAX))
     finish = False
