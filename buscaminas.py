@@ -60,17 +60,13 @@ def descubre(table,i,j):
         def mine():
             return True, table
 
-        switch = [
-            (lambda x: x == -1, mine),
-            (lambda x: x == 0, no_mines),
-            (lambda x: x > 0, mine_near)
-        ]
-
         def evaluate_cases(value):
-            for case, action in switch:
-                if case(value):
-                    return action()
-            return True, table
+            if value == -1:
+                return mine()
+            elif value == 0:
+                return no_mines()
+            elif value > 0:
+                return mine_near()
 
         return evaluate_cases(table[i][j])
 
