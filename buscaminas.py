@@ -1,6 +1,7 @@
 from logging import exception
 from time import sleep
 import numpy as np
+import pygame
 
 searching_vectors = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
 # MAX limits the size of the board because it is specified in the 'descubre' exercise section
@@ -24,24 +25,21 @@ def count_cell_mines(table,i=0,j=0):
     if table[i][j] != -1:
         table[i][j] = how_many_mines(table,i,j,searching_vectors)
     if i < table.shape[0] - 1:
-        i = i + 1
-        return count_cell_mines(table,i,j)
+        return count_cell_mines(table,i+1,j)
     else:
         if j < table.shape[1] - 1:
-            i = 0
-            j = j + 1
-            return count_cell_mines(table,i,j)
+            return count_cell_mines(table,0,j+1)
         else:
             return table
 
 #This function replace the values of the selected depending on the value of the cell
-def descubre(table,i,j):
+def discover(table,i,j):
     if table.shape != (8, 8):
         exception('Table dimensions are incorrect')
         return True, table
     else:
         table_aux = table.copy()
-        #Me veo obligado a hacer una copia de table ya que por lo visto el parámetro se envía por referencia
+        #Me veo obligado a hacer una copia de table ya que al trabajar en numpy el parámetro se envía por referencia
         minesweeper_table =  count_cell_mines(table_aux)
         del table_aux
 
@@ -72,6 +70,12 @@ def descubre(table,i,j):
 
 #This function is the mail function of the game
 def minesweeper():
+    pygame.init()
+    screen = pygame.display.set_mode((1000, 400))
+    pygame.draw.circle(screen, "red", (0, 0), 40)
+    pygame.display.update()
+    sleep(3)
+    pygame.quit()
     table = np.random.randint(-1, 1, size=(MAX, MAX))
     finish = False
     print('MINESWEEPER\n\n')
@@ -99,7 +103,7 @@ def minesweeper():
 
             if i >= MAX or j >= MAX:
                 raise ValueError
-            finish, table = descubre(table, i, j)
+            finish, table = discover(table, i, j)
             print("\n")
 
             if finish:

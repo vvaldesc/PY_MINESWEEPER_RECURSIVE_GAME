@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f480b292-055e-4ce2-aad5-3f9c8b4ef165" name="Changes" comment="Elif structure">
+      <change afterPath="$PROJECT_DIR$/fibonacci.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binaria_VictorValdes.py" beforeDir="false" afterPath="$PROJECT_DIR$/binaria_VictorValdes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buscaminas.py" beforeDir="false" afterPath="$PROJECT_DIR$/buscaminas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media_binaria_VictorValdes.py" beforeDir="false" afterPath="$PROJECT_DIR$/media_binaria_VictorValdes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quicksort_VictorValdes.py" beforeDir="false" afterPath="$PROJECT_DIR$/quicksort_VictorValdes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_binaria_VictorValdes.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_binaria_VictorValdes.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="printScope" value="1" />
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master_dev" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;vvaldesc&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/vvaldesc/PY_MINESWEEPER&quot;,
+    &quot;accountId&quot;: &quot;0ea1f9c6-7a75-48bd-9b17-2d2336511799&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2nHkJDa23Mrulnn1qgx7Xo8JLMY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_binaria_VictorValdes.Test.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_quicksort_VictorValdes.Test.test_binary_array_sort.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_binaria_VictorValdes.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_quicksort_VictorValdes.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python._pydev_execfile.executor&quot;: &quot;Run&quot;,
+    &quot;Python.binaria_VictorValdes.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.buscaminas.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fibonacci.executor&quot;: &quot;Run&quot;,
+    &quot;Python.media_binaria_VictorValdes.executor&quot;: &quot;Run&quot;,
+    &quot;Python.quicksort_VictorValdes.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master__dev__pygame&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vvaldes/Documents/SPEC/PIA/Recursividad&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vvaldes\Documents\SPEC\PIA\Recursividad" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for test_binaria_VictorValdes.Test">
+    <configuration name="Python tests for test_binaria_VictorValdes.Test" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Recursividad" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_binaria_VictorValdes.Test&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_quicksort_VictorValdes.Test.test_binary_array_sort" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Recursividad" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_quicksort_VictorValdes.Test.test_binary_array_sort&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for test_binaria_VictorValdes.Test" />
+        <item itemvalue="Python tests.Python tests for test_quicksort_VictorValdes.Test.test_binary_array_sort" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23339.19" />
+        <option value="bundled-python-sdk-0029f7779945-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23339.19" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f480b292-055e-4ce2-aad5-3f9c8b4ef165" name="Changes" comment="" />
+      <created>1728637314471</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1728637314471</updated>
+      <workItem from="1728637315847" duration="8200000" />
+      <workItem from="1728658120989" duration="16205000" />
+      <workItem from="1728720015187" duration="12483000" />
+      <workItem from="1728733403205" duration="957000" />
+      <workItem from="1728756644553" duration="47000" />
+      <workItem from="1728924771002" duration="8751000" />
+      <workItem from="1729003129920" duration="5273000" />
+    </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1728637815230</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728637815230</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Binary search working">
+      <option name="closed" value="true" />
+      <created>1728640528636</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1728640528636</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Unitary tests">
+      <option name="closed" value="true" />
+      <created>1728641341195</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1728641341195</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Binary array sorting working">
+      <option name="closed" value="true" />
+      <created>1728663044708</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728663044708</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Binary search matrix working">
+      <option name="closed" value="true" />
+      <created>1728669126260</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728669126260</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Binary search matrix working">
+      <option name="closed" value="true" />
+      <created>1728669163033</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728669163033</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Subslicing in binary search">
+      <option name="closed" value="true" />
+      <created>1728686680827</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728686680827</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Recursive mine counter">
+      <option name="closed" value="true" />
+      <created>1728688619868</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1728688619868</updated>
+    </task>
+    <task id="LOCAL-00009" summary="RGame working">
+      <option name="closed" value="true" />
+      <created>1728725982899</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1728725982899</updated>
+    </task>
+    <task id="LOCAL-00010" summary="New tests and comments">
+      <option name="closed" value="true" />
+      <created>1728730459438</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1728730459438</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Upgrades">
+      <option name="closed" value="true" />
+      <created>1728732848192</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1728732848192</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Upgrades">
+      <option name="closed" value="true" />
+      <created>1728733095496</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1728733095496</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Better print">
+      <option name="closed" value="true" />
+      <created>1728733883366</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1728733883366</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Better comments">
+      <option name="closed" value="true" />
+      <created>1728734262108</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1728734262108</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Recursive array average">
+      <option name="closed" value="true" />
+      <created>1728925780245</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1728925780245</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Binary search working">
+      <option name="closed" value="true" />
+      <created>1728927065549</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1728927065549</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Elif structure">
+      <option name="closed" value="true" />
+      <created>1729004085883</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1729004085883</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <MESSAGE value="Unitary tests" />
+    <MESSAGE value="Binary array sorting working" />
+    <MESSAGE value="Binary search matrix working" />
+    <MESSAGE value="Subslicing in binary search" />
+    <MESSAGE value="Recursive mine counter" />
+    <MESSAGE value="RGame working" />
+    <MESSAGE value="New tests and comments" />
+    <MESSAGE value="Upgrades" />
+    <MESSAGE value="Better print" />
+    <MESSAGE value="Better comments" />
+    <MESSAGE value="Recursive array average" />
+    <MESSAGE value="Binary search working" />
+    <MESSAGE value="Elif structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Elif structure" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Recursividad$quicksort_VictorValdes.coverage" NAME="quicksort_VictorValdes Coverage Results" MODIFIED="1728729511982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Recursividad$_pydev_execfile.coverage" NAME="_pydev_execfile Coverage Results" MODIFIED="1728662310029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_HOME_DIR$/plugins/python-ce/helpers/pydev/_pydev_imps" />
+    <SUITE FILE_PATH="coverage/Recursividad$media_binaria_VictorValdes.coverage" NAME="media_binaria_VictorValdes Coverage Results" MODIFIED="1728928171982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Recursividad$buscaminas.coverage" NAME="buscaminas Coverage Results" MODIFIED="1729008889292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Recursividad$fibonacci.coverage" NAME="fibonacci Coverage Results" MODIFIED="1728927409241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Recursividad$binaria_VictorValdes.coverage" NAME="binaria_VictorValdes Coverage Results" MODIFIED="1728933021348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Recursividad$.coverage" NAME=" Coverage Results" MODIFIED="1729003140506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
