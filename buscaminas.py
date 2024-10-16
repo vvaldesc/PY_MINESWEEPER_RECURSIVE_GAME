@@ -3,6 +3,9 @@ from time import sleep
 import numpy as np
 import pygame
 
+BOMB_SIZE = 10
+CELL_SIDE_SIZE = 14
+
 searching_vectors = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
 # MAX limits the size of the board because it is specified in the 'descubre' exercise section
 # The rest of the functions treat the matrix as a dynamic matrix
@@ -70,13 +73,8 @@ def discover(table,i,j):
 
 #This function is the mail function of the game
 def minesweeper():
-    pygame.init()
-    screen = pygame.display.set_mode((1000, 400))
-    pygame.draw.circle(screen, "red", (0, 0), 40)
-    pygame.display.update()
-    sleep(3)
-    pygame.quit()
     table = np.random.randint(-1, 1, size=(MAX, MAX))
+    draw_table(table)
     finish = False
     print('MINESWEEPER\n\n')
     sleep(1)
@@ -118,4 +116,33 @@ def minesweeper():
             print(f"Error: {e}. Please input a valid number.")
 
 
-minesweeper()
+def draw_table(table):
+    pygame.init()
+    screen = pygame.display.set_mode((1000, 1000))
+    pygame.display.set_caption('Minesweeper')
+
+    i_offset = 500
+    j_offset = 200
+
+    for i, row in enumerate(table):
+        for j, cell in enumerate(row):
+            # Dibuja el rectángulo
+            pygame.draw.rect(screen, "WHITE",
+                             (j * CELL_SIDE_SIZE + j_offset,
+                              i * CELL_SIDE_SIZE + i_offset,
+                              CELL_SIDE_SIZE,
+                              CELL_SIDE_SIZE),border_radius=4)
+
+            # Dibuja una bomba si el valor de la celda es -1
+            if cell == -1:
+                pygame.draw.circle(screen, "red",
+                                   (j * CELL_SIDE_SIZE + j_offset + CELL_SIDE_SIZE // 2,
+                                    i * CELL_SIDE_SIZE + i_offset + CELL_SIDE_SIZE // 2),
+                                   BOMB_SIZE)
+
+    pygame.display.update()
+    sleep(10)
+    pygame.quit()
+
+#minesweeper()
+draw_table(np.random.randint(-1, 1, size=(MAX, MAX)))
