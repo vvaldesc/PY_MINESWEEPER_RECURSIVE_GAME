@@ -3,7 +3,7 @@ from time import sleep
 import numpy as np
 import pygame
 
-BOMB_SIZE = 10
+BOMB_SIZE = 5
 CELL_SIDE_SIZE = 14
 
 searching_vectors = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
@@ -11,6 +11,48 @@ searching_vectors = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0
 # The rest of the functions treat the matrix as a dynamic matrix
 MAX = 8
 game_table = np.zeros((MAX, MAX), dtype=int)
+
+
+
+def init_gui():
+    pygame.init()
+    screen = pygame.display.set_mode((700, 700))
+    pygame.display.set_caption('Minesweeper')
+    return screen
+
+def finish_gui():
+    pygame.quit()
+
+def draw_table(table,display):
+
+    print("Actualizando gui")
+
+    i_offset = 200
+    j_offset = 200
+
+    for i, row in enumerate(table):
+        for j, cell in enumerate(row):
+            # Dibuja el rectángulo
+            pygame.draw.rect(display, "white",
+                             (j * CELL_SIDE_SIZE + j_offset - 1,
+                              i * CELL_SIDE_SIZE + i_offset - 1,
+                              CELL_SIDE_SIZE - 1,
+                              CELL_SIDE_SIZE - 1),border_radius=0)
+
+            # Dibuja una bomba si el valor de la celda es -1
+            if cell == -1:
+                draw_circle("red", display, i, i_offset, j, j_offset)
+            elif cell == 2:
+                draw_circle("green", display, i, i_offset, j, j_offset)
+
+    pygame.display.update()
+
+def draw_circle(color, display, i, i_offset, j, j_offset):
+    pygame.draw.circle(display, color,
+                       (j * CELL_SIDE_SIZE + j_offset + CELL_SIDE_SIZE // 2,
+                        i * CELL_SIDE_SIZE + i_offset + CELL_SIDE_SIZE // 2),
+                       BOMB_SIZE)
+
 
 #This function counts the number of mines near the selected cell recursively using 'searching_vectors' vectors
 def how_many_mines(table, i, j, search_vectors, c=0):
@@ -44,6 +86,8 @@ def discover(table,i,j):
         table_aux = table.copy()
         #Me veo obligado a hacer una copia de table ya que al trabajar en numpy el parámetro se envía por referencia
         minesweeper_table =  count_cell_mines(table_aux)
+        print('minesweeper_table')
+        print(minesweeper_table)
         del table_aux
 
         def mine_near():
@@ -74,7 +118,9 @@ def discover(table,i,j):
 #This function is the mail function of the game
 def minesweeper():
     table = np.random.randint(-1, 1, size=(MAX, MAX))
-    draw_table(table)
+    # Inits graphic envoirment
+    screen=init_gui()
+    draw_table(table,screen)
     finish = False
     print('MINESWEEPER\n\n')
     sleep(1)
@@ -107,42 +153,18 @@ def minesweeper():
             if finish:
                 print(table)
                 print("BOOOOOOOOOOOMMM YOU LOST")
+                draw_table(table,screen)
+                finish_gui()
             else:
                 print("CONTINUE!\n")
                 print(game_table)
+                draw_table(table,screen)
             sleep(1)
 
         except ValueError as e:
             print(f"Error: {e}. Please input a valid number.")
 
 
-def draw_table(table):
-    pygame.init()
-    screen = pygame.display.set_mode((1000, 1000))
-    pygame.display.set_caption('Minesweeper')
 
-    i_offset = 500
-    j_offset = 200
-
-    for i, row in enumerate(table):
-        for j, cell in enumerate(row):
-            # Dibuja el rectángulo
-            pygame.draw.rect(screen, "WHITE",
-                             (j * CELL_SIDE_SIZE + j_offset,
-                              i * CELL_SIDE_SIZE + i_offset,
-                              CELL_SIDE_SIZE,
-                              CELL_SIDE_SIZE),border_radius=4)
-
-            # Dibuja una bomba si el valor de la celda es -1
-            if cell == -1:
-                pygame.draw.circle(screen, "red",
-                                   (j * CELL_SIDE_SIZE + j_offset + CELL_SIDE_SIZE // 2,
-                                    i * CELL_SIDE_SIZE + i_offset + CELL_SIDE_SIZE // 2),
-                                   BOMB_SIZE)
-
-    pygame.display.update()
-    sleep(10)
-    pygame.quit()
-
-#minesweeper()
-draw_table(np.random.randint(-1, 1, size=(MAX, MAX)))
+minesweeper()
+#draw_table(np.random.randint(-1, 1, size=(MAX, MAX)),init_GUI())
