@@ -6,6 +6,18 @@ import pygame
 BOMB_SIZE = 5
 CELL_SIDE_SIZE = 14
 
+i_offset = 200
+j_offset = 200
+
+
+def rect(i: int, j: int):
+    return j * CELL_SIDE_SIZE + j_offset - 1, i * CELL_SIDE_SIZE + i_offset - 1, CELL_SIDE_SIZE - 1, CELL_SIDE_SIZE - 1
+
+SOURCE_SIDE_SIZE = 16
+
+BOMB_SOURCE = SOURCE_SIDE_SIZE*2, SOURCE_SIDE_SIZE*2, SOURCE_SIDE_SIZE*3, SOURCE_SIDE_SIZE*3
+FLAG_SOURCE = SOURCE_SIDE_SIZE*3, SOURCE_SIDE_SIZE*3, SOURCE_SIDE_SIZE*4, SOURCE_SIDE_SIZE*4
+
 searching_vectors = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
 # MAX limits the size of the board because it is specified in the 'descubre' exercise section
 # The rest of the functions treat the matrix as a dynamic matrix
@@ -17,6 +29,7 @@ game_table = np.zeros((MAX, MAX), dtype=int)
 def init_gui():
     pygame.init()
     screen = pygame.display.set_mode((700, 700))
+    screen.fill((255, 255, 255))
     pygame.display.set_caption('Minesweeper')
     return screen
 
@@ -27,31 +40,40 @@ def draw_table(table,display):
 
     print("Actualizando gui")
 
-    i_offset = 200
-    j_offset = 200
 
     for i, row in enumerate(table):
         for j, cell in enumerate(row):
-            # Dibuja el rectángulo
-            pygame.draw.rect(display, "white",
-                             (j * CELL_SIDE_SIZE + j_offset - 1,
-                              i * CELL_SIDE_SIZE + i_offset - 1,
-                              CELL_SIDE_SIZE - 1,
-                              CELL_SIDE_SIZE - 1),border_radius=0)
+
 
             # Dibuja una bomba si el valor de la celda es -1
             if cell == -1:
-                draw_circle("red", display, i, i_offset, j, j_offset)
+                draw_bomb(i, j, display)
             elif cell == 2:
-                draw_circle("green", display, i, i_offset, j, j_offset)
+                draw_flag(i, j, display)
+            else:
+                # Dibuja el rectángulo
+                pygame.draw.rect(display, "white",
+                                 (rect(i, j)), border_radius=0)
 
     pygame.display.update()
 
-def draw_circle(color, display, i, i_offset, j, j_offset):
+def draw_circle(color, display, i: int, i_offset: int, j: int, j_offset: int):
     pygame.draw.circle(display, color,
                        (j * CELL_SIDE_SIZE + j_offset + CELL_SIDE_SIZE // 2,
                         i * CELL_SIDE_SIZE + i_offset + CELL_SIDE_SIZE // 2),
                        BOMB_SIZE)
+
+def draw_flag(i: int, j: int, display):
+    image = pygame.image.load("assets/img/minesweeper.png")
+    display.blit(image, rect(i,j), FLAG_SOURCE)
+
+def draw_bomb(i: int, j: int, display):
+    image = pygame.image.load("assets/img/minesweeper.png")
+    display.blit(image, rect(i,j), BOMB_SOURCE)
+
+def draw_number(i: int, j: int, n: int, display):
+    image = pygame.image.load("assets/img/minesweeper.png")
+    display.blit(image, rect(i,j), FLAG_SOURCE)
 
 
 #This function counts the number of mines near the selected cell recursively using 'searching_vectors' vectors
