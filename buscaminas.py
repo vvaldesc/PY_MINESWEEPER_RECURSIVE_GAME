@@ -16,14 +16,15 @@ def rect(i: int, j: int):
 
 SOURCE_SIDE_SIZE = 16
 
-BOMB_SOURCE = (SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE * 3, SOURCE_SIDE_SIZE * 3)
-FLAG_SOURCE = (SOURCE_SIDE_SIZE * 3, SOURCE_SIDE_SIZE * 3, SOURCE_SIDE_SIZE * 4, SOURCE_SIDE_SIZE * 4)
-WALL_SOURCE = (SOURCE_SIDE_SIZE * 1, SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE * 3)
-FLOOR_SOURCE = (SOURCE_SIDE_SIZE * 0, SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE * 1, SOURCE_SIDE_SIZE * 3)
+BOMB_SOURCE = (SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE, SOURCE_SIDE_SIZE)
+FLAG_SOURCE = (SOURCE_SIDE_SIZE * 3, SOURCE_SIDE_SIZE * 3, SOURCE_SIDE_SIZE, SOURCE_SIDE_SIZE)
+WALL_SOURCE = (SOURCE_SIDE_SIZE * 1, SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE, SOURCE_SIDE_SIZE)
+FLOOR_SOURCE = (SOURCE_SIDE_SIZE * 0, SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE, SOURCE_SIDE_SIZE)
 
 image = None
 
 def number_source(n: int):
+    n = n - 1
     i = n % 4
     j = n // 4
     return SOURCE_SIDE_SIZE * i, SOURCE_SIDE_SIZE * j, SOURCE_SIDE_SIZE * (i + 1), SOURCE_SIDE_SIZE * (j + 1)
@@ -149,8 +150,8 @@ def discover(table,i,j):
 
 #This function is the mail function of the game
 def minesweeper():
-    #table = np.random.randint(-1, 1, size=(MAX, MAX))
-    table = np.zeros((MAX, MAX), dtype=int)
+    table = np.random.randint(-1, 1, size=(MAX, MAX))
+    #table = np.zeros((MAX, MAX), dtype=int)
     table[0][0] = -1
     # Inits graphic envoirment
     screen=init_gui()
