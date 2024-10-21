@@ -5,19 +5,16 @@ import pygame
 
 BOMB_SIZE = 5
 CELL_SIDE_SIZE = 16
+SOURCE_SIDE_SIZE = 16
 
 i_offset = 400
 j_offset = 200
 
 def rect(i: int, j: int):
-    print(i * CELL_SIDE_SIZE + i_offset, j * CELL_SIDE_SIZE + j_offset, (i+1) * CELL_SIDE_SIZE + i_offset, (j+1) * CELL_SIDE_SIZE + j_offset)
-    return i * CELL_SIDE_SIZE + i_offset, j * CELL_SIDE_SIZE + j_offset, (i+1) * CELL_SIDE_SIZE + i_offset, (j+1) * CELL_SIDE_SIZE + j_offset
-
-
-SOURCE_SIDE_SIZE = 16
+    return i * CELL_SIDE_SIZE + i_offset, j * CELL_SIDE_SIZE + j_offset,CELL_SIDE_SIZE, CELL_SIDE_SIZE
 
 BOMB_SOURCE = (SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE, SOURCE_SIDE_SIZE)
-FLAG_SOURCE = (SOURCE_SIDE_SIZE * 3, SOURCE_SIDE_SIZE * 3, SOURCE_SIDE_SIZE, SOURCE_SIDE_SIZE)
+FLAG_SOURCE = (SOURCE_SIDE_SIZE * 3, SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE, SOURCE_SIDE_SIZE)
 WALL_SOURCE = (SOURCE_SIDE_SIZE * 1, SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE, SOURCE_SIDE_SIZE)
 FLOOR_SOURCE = (SOURCE_SIDE_SIZE * 0, SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE, SOURCE_SIDE_SIZE)
 
@@ -54,18 +51,18 @@ def finish_gui():
 def draw_table(table,display):
 
     print("Actualizando gui")
-
+    print(table)
     for j, row in enumerate(table):
         for i, cell in enumerate(row):
             if cell == -1:
                 draw_bomb(i, j, display)
-            elif cell == -2:
+            elif cell == (-2):
                 draw_flag(i, j, display)
             elif cell == 0:
                 draw_wall(i, j, display)
             else:
-                draw_number(i, j, number_source(cell),display)
-            pygame.display.update()
+                if cell > 0:
+                    draw_number(i, j, number_source(cell),display)
 
     pygame.display.update()
 
@@ -155,16 +152,17 @@ def minesweeper():
     table[0][0] = -1
     # Inits graphic envoirment
     screen=init_gui()
-    draw_table(table,screen)
     finish = False
     print('MINESWEEPER\n\n')
-    sleep(1)
+    #sleep(1)
     print('\nTHESE ARE THE MINES')
     print(table)
-    sleep(3)
+    #sleep(3)
     print('\nTHIS IS YOUR GAME')
     print(game_table)
-    sleep(1)
+    #sleep(1)
+    draw_table(game_table,screen)
+
     while not finish:
         try:
             while True:
@@ -186,12 +184,13 @@ def minesweeper():
             if finish:
                 print(table)
                 print("BOOOOOOOOOOOMMM YOU LOST")
-                draw_table(table,screen)
+                draw_table(game_table,screen)
+                sleep(1)
                 finish_gui()
             else:
                 print("CONTINUE!\n")
                 print(game_table)
-                draw_table(table,screen)
+                draw_table(game_table,screen)
             sleep(1)
 
         except ValueError as e:
