@@ -3,8 +3,8 @@ from time import sleep
 import numpy as np
 import pygame
 
-CELL_SIDE_SIZE = 16 #tamaño casilla en TAD
-SOURCE_SIDE_SIZE = 16 #tamaño casilla en source
+CELL_SIDE_SIZE = 16 #cell size in TAD
+SOURCE_SIDE_SIZE = 16 #cell size in source
 
 i_offset = 400
 j_offset = 200
@@ -49,8 +49,6 @@ def finish_gui():
 
 def draw_table(table,display):
 
-    print("Actualizando gui")
-    print(table)
     for j, row in enumerate(table):
         for i, cell in enumerate(row):
             if cell == -1:
@@ -96,7 +94,7 @@ def how_many_mines(table, i, j, search_vectors, c=0):
         return how_many_mines(table, i, j, search_vectors[1:], c)
 
 #This function edits the minesweeper table to create the table that shows where are the bombs to the client.
-def count_cell_mines(table,i=0,j=0):
+def count_cell_mines(table, i=0, j=0):
     if table[i][j] != -1:
         table[i][j] = how_many_mines(table,i,j,searching_vectors)
     if i < table.shape[0] - 1:
@@ -106,6 +104,16 @@ def count_cell_mines(table,i=0,j=0):
             return count_cell_mines(table,0,j+1)
         else:
             return table
+
+#This function shows the bombs in the main table
+def discover_bombs(bombs_table, game_table):
+    rows, cols = bombs_table.shape
+    for i in range(rows):
+        for j in range(cols):
+            if bombs_table[i, j] == -1:
+                game_table[i, j] = -1
+
+    return np.where(game_table == 0, -3, game_table)
 
 #This function replace the values of the selected depending on the value of the cell
 def discover(table,i,j):
@@ -117,7 +125,6 @@ def discover(table,i,j):
         region = np.where(region == 0, -3, region)
         region = np.where(region == -4, 0, region)
         game_table[max(0, x - 1):min(x + 2, 8), max(0, y - 1):min(y + 2, 8)] = region
-        #game_table[x][y] = -2
 
     if table.shape != (8, 8):
         exception('Table dimensions are incorrect')
@@ -125,7 +132,7 @@ def discover(table,i,j):
     else:
         table_aux = table.copy()
         minesweeper_table =  count_cell_mines(table_aux)
-        print('minesweeper_table')
+        print('Bombs near table:')
         print(minesweeper_table)
         del table_aux
 
@@ -134,32 +141,38 @@ def discover(table,i,j):
             return False, table
 
         def no_mines():
+            # Discovers the zeros island
             def discover_zeros_island(x=i, y=j):
+                # Return the island's vectors
                 def zeros_island(x_aux, y_aux, table_island, visited=np.zeros((8, 8), dtype=bool)):
                     if x_aux < 0 or x_aux >= table_island.shape[0] or y_aux < 0 or y_aux >= table_island.shape[1]:
                         return []
                     if table_island[x_aux][y_aux] != 0 or visited[x_aux, y_aux]:
                         return []
 
-                    # Marca la celda como visitada
+                    # Switch cell to visited
                     visited[x_aux, y_aux] = True
                     island = [(x_aux, y_aux)]
 
-                    # Llama recursivamente para explorar celdas adyacentes
+                    # Recursive adjacent cells search
                     directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
                     for dx, dy in directions:
                         island += zeros_island(x_aux + dx, y_aux + dy, table_island, visited)
 
                     return island
+
+                # Discovering process
                 island = zeros_island(x, y, minesweeper_table.copy())
                 for x, y in island:
                     discover_near(x, y)
+
             discover_zeros_island()
             return False, table
 
         def mine():
             return True, table
 
+        # This function chooses what to do in each case
         def evaluate_cases(value):
             if value == -1:
                 return mine()
@@ -170,26 +183,53 @@ def discover(table,i,j):
 
         return evaluate_cases(minesweeper_table[i][j])
 
+#This function checks winning
+def win(table, bombs_table):
+    # Copy of original table
+    table_aux = table.copy()
+
+    # Refresh table with the bombs
+    rows, cols = bombs_table.shape
+    for i in range(rows):
+        for j in range(cols):
+            if bombs_table[i, j] == -1:
+                table_aux[i, j] = -1
+
+    # Verifica cada celda en table_aux
+    for row in table_aux:
+        for cell in row:
+            if cell == 0:
+                return False
+    return True
+
 #This function is the mail function of the game
 def minesweeper():
-    #table = np.random.randint(-1, 1, size=(MAX, MAX))
-    #table = np.zeros((MAX, MAX), dtype=int)
 
+    # Low probability of bomb
     values = np.array([-1, 0])
     probabilities = np.array([0.1, 0.9])
     table = np.random.choice(values, size=(MAX, MAX), p=probabilities)
 
+    # Testing table
+    '''
+    table = np.zeros((MAX, MAX), dtype=int)
+    table[1,0]=-1
+    '''
+
     screen=init_gui()
+    draw_table(game_table,screen)
+
+
+
     finish = False
-    print('MINESWEEPER\n\n')
-    #sleep(1)
+    print('WELCOME TO MINESWEEPER\n\n')
+    sleep(1)
     print('\nTHESE ARE THE MINES')
     print(table)
-    #sleep(3)
+    sleep(1)
     print('\nTHIS IS YOUR GAME')
     print(game_table)
-    #sleep(1)
-    draw_table(game_table,screen)
+    sleep(1)
 
     while not finish:
         try:
@@ -209,18 +249,24 @@ def minesweeper():
             finish, table = discover(table, i, j)
             print("\n")
 
+            if win(game_table, table):
+                print("YOU WIN!")
+                draw_table(game_table,screen)
+                sleep(2)
+                finish_gui()
+                break
+
             if finish:
                 print(table)
                 print("BOOOOOOOOOOOMMM YOU LOST")
-                draw_table(game_table,screen)
-                sleep(1)
+                draw_table(discover_bombs(table,game_table),screen)
+                sleep(2)
                 finish_gui()
             else:
                 print("CONTINUE!\n")
                 print(game_table)
                 draw_table(game_table,screen)
 
-            sleep(1)
 
         except ValueError as e:
             print(f"Error: {e}. Please input a valid number.")
