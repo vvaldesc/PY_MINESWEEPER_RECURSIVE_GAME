@@ -271,7 +271,4 @@ def minesweeper():
         except ValueError as e:
             print(f"Error: {e}. Please input a valid number.")
 
-
-
 minesweeper()
-#draw_table(np.random.randint(-1, 1, size=(MAX, MAX)),init_GUI())
