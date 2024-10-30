@@ -1,4 +1,5 @@
 '''
+import numpy as np
 
 If input array not sorted
 
@@ -11,24 +12,32 @@ def binary_array_search(array,n:int,i=0):
     else:
         return False
 '''
-import numpy as np
+
 
 
 def binary_array_search(array,n:int,i=0):
-    if array.size > 0:
-        mid = array.size // 2
+    if len(array) > 0:
+        mid = len(array) // 2
         if array[mid] == n:
             return i + mid
         else:
             if array[mid] > n:
+                #izquierda
                 return binary_array_search(array[:mid],n,i)
             else:
                 #derecha
-                return binary_array_search(array[mid+1:],n,i + mid+1)
+                return binary_array_search(array[mid+1:],n,i+mid+1)
     else:
-        return False
+        return -1
 
+import numpy as np
+array = np.array([10,15,17,24,25,76,129,222])
 
-array = np.arange(8)
 print(array)
-print(binary_array_search(array,7))
+print(binary_array_search(array,76))
+
+x=array[2:5]
+x[0]=99
+print(x)
+
+

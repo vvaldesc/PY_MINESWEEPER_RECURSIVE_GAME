@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f480b292-055e-4ce2-aad5-3f9c8b4ef165" name="Changes" comment="Better print" />
+    <list default="true" id="f480b292-055e-4ce2-aad5-3f9c8b4ef165" name="Changes" comment="Discovering zeros island working">
+      <change afterPath="$PROJECT_DIR$/fibonacci.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Recursividad.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Recursividad.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binaria_VictorValdes.py" beforeDir="false" afterPath="$PROJECT_DIR$/binaria_VictorValdes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buscaminas.py" beforeDir="false" afterPath="$PROJECT_DIR$/buscaminas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media_binaria_VictorValdes.py" beforeDir="false" afterPath="$PROJECT_DIR$/media_binaria_VictorValdes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quicksort_VictorValdes.py" beforeDir="false" afterPath="$PROJECT_DIR$/quicksort_VictorValdes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_binaria_VictorValdes.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_binaria_VictorValdes.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +38,11 @@
         <option name="title" value="All" />
       </GitPushTagMode>
     </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master_dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -52,30 +66,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests for test_binaria_VictorValdes.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_quicksort_VictorValdes.Test.test_binary_array_sort.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_binaria_VictorValdes.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_quicksort_VictorValdes.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python._pydev_execfile.executor&quot;: &quot;Run&quot;,
-    &quot;Python.binaria_VictorValdes.executor&quot;: &quot;Run&quot;,
-    &quot;Python.buscaminas.executor&quot;: &quot;Run&quot;,
-    &quot;Python.quicksort_VictorValdes.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/vvaldes/Documents/SPEC/PIA/Recursividad&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for test_binaria_VictorValdes.Test.executor": "Debug",
+    "Python tests.Python tests for test_quicksort_VictorValdes.Test.test_binary_array_sort.executor": "Run",
+    "Python tests.Python tests in test_binaria_VictorValdes.py.executor": "Run",
+    "Python tests.Python tests in test_quicksort_VictorValdes.py.executor": "Run",
+    "Python._pydev_execfile.executor": "Run",
+    "Python.binaria_VictorValdes.executor": "Debug",
+    "Python.buscaminas.executor": "Run",
+    "Python.fibonacci.executor": "Run",
+    "Python.media_binaria_VictorValdes.executor": "Run",
+    "Python.quicksort_VictorValdes.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master__dev__pygame",
+    "last_opened_file_path": "C:/Users/vvaldes/Documents/SPEC/PIA/Recursividad",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\vvaldes\Documents\SPEC\PIA\Recursividad" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vvaldes\Documents\SPEC\PIA\Recursividad\assets\img" />
     </key>
   </component>
   <component name="RunManager">
@@ -137,7 +157,20 @@
       <workItem from="1728637315847" duration="8200000" />
       <workItem from="1728658120989" duration="16205000" />
       <workItem from="1728720015187" duration="12483000" />
-      <workItem from="1728733403205" duration="490000" />
+      <workItem from="1728733403205" duration="957000" />
+      <workItem from="1728756644553" duration="47000" />
+      <workItem from="1728924771002" duration="8751000" />
+      <workItem from="1729003129920" duration="5273000" />
+      <workItem from="1729154401944" duration="2721000" />
+      <workItem from="1729533417506" duration="1764000" />
+      <workItem from="1729608712211" duration="111000" />
+      <workItem from="1729853587426" duration="1408000" />
+      <workItem from="1730138128595" duration="15000" />
+      <workItem from="1730138172061" duration="75000" />
+      <workItem from="1730224675478" duration="332000" />
+      <workItem from="1730233046705" duration="140000" />
+      <workItem from="1730233195733" duration="2948000" />
+      <workItem from="1730314766197" duration="9119000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -243,7 +276,71 @@
       <option name="project" value="LOCAL" />
       <updated>1728733883366</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Better comments">
+      <option name="closed" value="true" />
+      <created>1728734262108</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1728734262108</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Recursive array average">
+      <option name="closed" value="true" />
+      <created>1728925780245</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1728925780245</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Binary search working">
+      <option name="closed" value="true" />
+      <created>1728927065549</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1728927065549</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Elif structure">
+      <option name="closed" value="true" />
+      <created>1729004085883</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1729004085883</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Update table and refactor">
+      <option name="closed" value="true" />
+      <created>1729155860860</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1729155860860</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Assets">
+      <option name="closed" value="true" />
+      <created>1729156217211</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1729156217212</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Fix image rect">
+      <option name="closed" value="true" />
+      <created>1729530841292</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1729530841292</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Discovering zeros island working">
+      <option name="closed" value="true" />
+      <created>1730321922855</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1730321922855</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +359,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
-    <MESSAGE value="Binary search working" />
     <MESSAGE value="Unitary tests" />
     <MESSAGE value="Binary array sorting working" />
     <MESSAGE value="Binary search matrix working" />
@@ -272,24 +368,34 @@
     <MESSAGE value="New tests and comments" />
     <MESSAGE value="Upgrades" />
     <MESSAGE value="Better print" />
-    <option name="LAST_COMMIT_MESSAGE" value="Better print" />
+    <MESSAGE value="Better comments" />
+    <MESSAGE value="Recursive array average" />
+    <MESSAGE value="Binary search working" />
+    <MESSAGE value="Elif structure" />
+    <MESSAGE value="Update table and refactor" />
+    <MESSAGE value="Assets" />
+    <MESSAGE value="Fix image rect" />
+    <MESSAGE value="Discovering zeros island working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Discovering zeros island working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/quicksort_VictorValdes.py</url>
-          <line>3</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Recursividad$quicksort_VictorValdes.coverage" NAME="quicksort_VictorValdes Coverage Results" MODIFIED="1728729511982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Recursividad$_pydev_execfile.coverage" NAME="_pydev_execfile Coverage Results" MODIFIED="1728662310029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_HOME_DIR$/plugins/python-ce/helpers/pydev/_pydev_imps" />
-    <SUITE FILE_PATH="coverage/Recursividad$buscaminas.coverage" NAME="buscaminas Coverage Results" MODIFIED="1728733837989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Recursividad$binaria_VictorValdes.coverage" NAME="binaria_VictorValdes Coverage Results" MODIFIED="1728640371670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Recursividad$.coverage" NAME=" Coverage Results" MODIFIED="1728733562513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Recursividad$media_binaria_VictorValdes.coverage" NAME="media_binaria_VictorValdes Coverage Results" MODIFIED="1728928171982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Recursividad$buscaminas.coverage" NAME="buscaminas Coverage Results" MODIFIED="1730324854301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Recursividad$fibonacci.coverage" NAME="fibonacci Coverage Results" MODIFIED="1728927409241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Recursividad$binaria_VictorValdes.coverage" NAME="binaria_VictorValdes Coverage Results" MODIFIED="1728933021348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Recursividad$.coverage" NAME=" Coverage Results" MODIFIED="1730317965080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
