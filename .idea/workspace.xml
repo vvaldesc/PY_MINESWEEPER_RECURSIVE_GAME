@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f480b292-055e-4ce2-aad5-3f9c8b4ef165" name="Changes" comment="Fix image rect">
+    <list default="true" id="f480b292-055e-4ce2-aad5-3f9c8b4ef165" name="Changes" comment="Discovering zeros island working">
       <change afterPath="$PROJECT_DIR$/fibonacci.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Recursividad.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Recursividad.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/binaria_VictorValdes.py" beforeDir="false" afterPath="$PROJECT_DIR$/binaria_VictorValdes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buscaminas.py" beforeDir="false" afterPath="$PROJECT_DIR$/buscaminas.py" afterDir="false" />
@@ -75,7 +74,7 @@
     "Python tests.Python tests in test_quicksort_VictorValdes.py.executor": "Run",
     "Python._pydev_execfile.executor": "Run",
     "Python.binaria_VictorValdes.executor": "Debug",
-    "Python.buscaminas.executor": "Debug",
+    "Python.buscaminas.executor": "Run",
     "Python.fibonacci.executor": "Run",
     "Python.media_binaria_VictorValdes.executor": "Run",
     "Python.quicksort_VictorValdes.executor": "Run",
@@ -171,7 +170,7 @@
       <workItem from="1730224675478" duration="332000" />
       <workItem from="1730233046705" duration="140000" />
       <workItem from="1730233195733" duration="2948000" />
-      <workItem from="1730314766197" duration="5944000" />
+      <workItem from="1730314766197" duration="9119000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -333,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729530841292</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Discovering zeros island working">
+      <option name="closed" value="true" />
+      <created>1730321922855</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1730321922855</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,22 +375,11 @@
     <MESSAGE value="Update table and refactor" />
     <MESSAGE value="Assets" />
     <MESSAGE value="Fix image rect" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix image rect" />
+    <MESSAGE value="Discovering zeros island working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Discovering zeros island working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/buscaminas.py</url>
-          <line>117</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/buscaminas.py</url>
-          <line>155</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -397,7 +393,7 @@
     <SUITE FILE_PATH="coverage/Recursividad$quicksort_VictorValdes.coverage" NAME="quicksort_VictorValdes Coverage Results" MODIFIED="1728729511982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Recursividad$_pydev_execfile.coverage" NAME="_pydev_execfile Coverage Results" MODIFIED="1728662310029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_HOME_DIR$/plugins/python-ce/helpers/pydev/_pydev_imps" />
     <SUITE FILE_PATH="coverage/Recursividad$media_binaria_VictorValdes.coverage" NAME="media_binaria_VictorValdes Coverage Results" MODIFIED="1728928171982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Recursividad$buscaminas.coverage" NAME="buscaminas Coverage Results" MODIFIED="1730321654735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Recursividad$buscaminas.coverage" NAME="buscaminas Coverage Results" MODIFIED="1730324854301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Recursividad$fibonacci.coverage" NAME="fibonacci Coverage Results" MODIFIED="1728927409241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Recursividad$binaria_VictorValdes.coverage" NAME="binaria_VictorValdes Coverage Results" MODIFIED="1728933021348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Recursividad$.coverage" NAME=" Coverage Results" MODIFIED="1730317965080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
