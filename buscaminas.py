@@ -3,9 +3,8 @@ from time import sleep
 import numpy as np
 import pygame
 
-BOMB_SIZE = 5
-CELL_SIDE_SIZE = 16
-SOURCE_SIDE_SIZE = 16
+CELL_SIDE_SIZE = 16 #tamaño casilla en TAD
+SOURCE_SIDE_SIZE = 16 #tamaño casilla en source
 
 i_offset = 400
 j_offset = 200
@@ -60,6 +59,8 @@ def draw_table(table,display):
                 draw_flag(i, j, display)
             elif cell == 0:
                 draw_wall(i, j, display)
+            elif cell == -3:
+                draw_floor(i, j, display)
             else:
                 if cell > 0:
                     draw_number(i, j, number_source(cell),display)
@@ -108,12 +109,21 @@ def count_cell_mines(table,i=0,j=0):
 
 #This function replace the values of the selected depending on the value of the cell
 def discover(table,i,j):
+    def discover_near(x=i, y=j):
+        region = minesweeper_table[max(0, x - 1):min(x + 2, 8), max(0, y - 1):min(y + 2, 8)]
+        table[max(0, x - 1):min(x + 2, 8), max(0, y - 1):min(y + 2, 8)] = region
+        # No entiendo bien el warning del segundo parámetro
+        region = np.where(region == -1, -4, region)
+        region = np.where(region == 0, -3, region)
+        region = np.where(region == -4, 0, region)
+        game_table[max(0, x - 1):min(x + 2, 8), max(0, y - 1):min(y + 2, 8)] = region
+        #game_table[x][y] = -2
+
     if table.shape != (8, 8):
         exception('Table dimensions are incorrect')
         return True, table
     else:
         table_aux = table.copy()
-        #Me veo obligado a hacer una copia de table ya que al trabajar en numpy el parámetro se envía por referencia
         minesweeper_table =  count_cell_mines(table_aux)
         print('minesweeper_table')
         print(minesweeper_table)
@@ -124,12 +134,27 @@ def discover(table,i,j):
             return False, table
 
         def no_mines():
-            region = minesweeper_table[max(0, i - 1):min(i + 2, 8),max(0, j - 1):min(j + 2, 8)]
-            table[max(0, i - 1):min(i + 2, 8), max(0, j - 1):min(j + 2, 8)] = region
-            #No entiendo bien el warning del segundo parámetro
-            region = np.where(region == -1, 0, region)
-            game_table[max(0, i - 1):min(i + 2, 8), max(0, j - 1):min(j + 2, 8)] = region
-            game_table[i][j] = -2
+            def discover_zeros_island(x=i, y=j):
+                def zeros_island(x_aux, y_aux, table_island, visited=np.zeros((8, 8), dtype=bool)):
+                    if x_aux < 0 or x_aux >= table_island.shape[0] or y_aux < 0 or y_aux >= table_island.shape[1]:
+                        return []
+                    if table_island[x_aux][y_aux] != 0 or visited[x_aux, y_aux]:
+                        return []
+
+                    # Marca la celda como visitada
+                    visited[x_aux, y_aux] = True
+                    island = [(x_aux, y_aux)]
+
+                    # Llama recursivamente para explorar celdas adyacentes
+                    directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+                    for dx, dy in directions:
+                        island += zeros_island(x_aux + dx, y_aux + dy, table_island, visited)
+
+                    return island
+                island = zeros_island(x, y, minesweeper_table.copy())
+                for x, y in island:
+                    discover_near(x, y)
+            discover_zeros_island()
             return False, table
 
         def mine():
@@ -143,14 +168,17 @@ def discover(table,i,j):
             elif value > 0:
                 return mine_near()
 
-        return evaluate_cases(table[i][j])
+        return evaluate_cases(minesweeper_table[i][j])
 
 #This function is the mail function of the game
 def minesweeper():
-    table = np.random.randint(-1, 1, size=(MAX, MAX))
+    #table = np.random.randint(-1, 1, size=(MAX, MAX))
     #table = np.zeros((MAX, MAX), dtype=int)
-    table[0][0] = -1
-    # Inits graphic envoirment
+
+    values = np.array([-1, 0])
+    probabilities = np.array([0.1, 0.9])
+    table = np.random.choice(values, size=(MAX, MAX), p=probabilities)
+
     screen=init_gui()
     finish = False
     print('MINESWEEPER\n\n')
@@ -191,6 +219,7 @@ def minesweeper():
                 print("CONTINUE!\n")
                 print(game_table)
                 draw_table(game_table,screen)
+
             sleep(1)
 
         except ValueError as e:
