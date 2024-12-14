@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f480b292-055e-4ce2-aad5-3f9c8b4ef165" name="Changes" comment="Discovering zeros island working">
-      <change afterPath="$PROJECT_DIR$/fibonacci.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Recursividad.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Recursividad.iml" afterDir="false" />
+    <list default="true" id="f480b292-055e-4ce2-aad5-3f9c8b4ef165" name="Changes" comment="Examples">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/binaria_VictorValdes.py" beforeDir="false" afterPath="$PROJECT_DIR$/binaria_VictorValdes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buscaminas.py" beforeDir="false" afterPath="$PROJECT_DIR$/buscaminas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media_binaria_VictorValdes.py" beforeDir="false" afterPath="$PROJECT_DIR$/media_binaria_VictorValdes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quicksort_VictorValdes.py" beforeDir="false" afterPath="$PROJECT_DIR$/quicksort_VictorValdes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_binaria_VictorValdes.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_binaria_VictorValdes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +46,17 @@
     &quot;assignee&quot;: &quot;vvaldesc&quot;
   }
 }</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOM-6lJc6AdB9q&quot;,
+        &quot;number&quot;: 2
+      },
+      &quot;lastSeen&quot;: 1730325742983
+    }
+  ]
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/vvaldesc/PY_MINESWEEPER&quot;,
@@ -68,7 +74,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python tests.Python tests for test_binaria_VictorValdes.Test.executor": "Debug",
+    "Python tests.Python tests for test_binaria_VictorValdes.Test.executor": "Run",
     "Python tests.Python tests for test_quicksort_VictorValdes.Test.test_binary_array_sort.executor": "Run",
     "Python tests.Python tests in test_binaria_VictorValdes.py.executor": "Run",
     "Python tests.Python tests in test_quicksort_VictorValdes.py.executor": "Run",
@@ -79,7 +85,8 @@
     "Python.media_binaria_VictorValdes.executor": "Run",
     "Python.quicksort_VictorValdes.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master__dev__pygame",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/vvaldes/Documents/SPEC/PIA/Recursividad",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -90,6 +97,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="Push.Settings">
+    <force-push-targets>
+      <force-push-target remote-path="origin" branch="master_dev_pygame" />
+    </force-push-targets>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\vvaldes\Documents\SPEC\PIA\Recursividad" />
@@ -141,8 +153,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23339.19" />
-        <option value="bundled-python-sdk-0029f7779945-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23339.19" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23726.102" />
+        <option value="bundled-python-sdk-5e1850174b45-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23726.102" />
       </set>
     </attachedChunks>
   </component>
@@ -171,6 +183,10 @@
       <workItem from="1730233046705" duration="140000" />
       <workItem from="1730233195733" duration="2948000" />
       <workItem from="1730314766197" duration="9119000" />
+      <workItem from="1730326136800" duration="65000" />
+      <workItem from="1730458985795" duration="1308000" />
+      <workItem from="1730548672287" duration="768000" />
+      <workItem from="1731622016784" duration="234000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -393,9 +409,9 @@
     <SUITE FILE_PATH="coverage/Recursividad$quicksort_VictorValdes.coverage" NAME="quicksort_VictorValdes Coverage Results" MODIFIED="1728729511982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Recursividad$_pydev_execfile.coverage" NAME="_pydev_execfile Coverage Results" MODIFIED="1728662310029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_HOME_DIR$/plugins/python-ce/helpers/pydev/_pydev_imps" />
     <SUITE FILE_PATH="coverage/Recursividad$media_binaria_VictorValdes.coverage" NAME="media_binaria_VictorValdes Coverage Results" MODIFIED="1728928171982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Recursividad$buscaminas.coverage" NAME="buscaminas Coverage Results" MODIFIED="1730324854301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Recursividad$buscaminas.coverage" NAME="buscaminas Coverage Results" MODIFIED="1731622234335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Recursividad$fibonacci.coverage" NAME="fibonacci Coverage Results" MODIFIED="1728927409241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Recursividad$binaria_VictorValdes.coverage" NAME="binaria_VictorValdes Coverage Results" MODIFIED="1728933021348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Recursividad$.coverage" NAME=" Coverage Results" MODIFIED="1730317965080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Recursividad$.coverage" NAME=" Coverage Results" MODIFIED="1731622043320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

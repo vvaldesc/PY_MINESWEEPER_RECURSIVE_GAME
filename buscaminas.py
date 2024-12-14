@@ -3,11 +3,13 @@ from time import sleep
 import numpy as np
 import pygame
 
-CELL_SIDE_SIZE = 16 #cell size in TAD
-SOURCE_SIDE_SIZE = 16 #cell size in source
+CELL_SIDE_SIZE = 32 #cell size in TAD
+SOURCE_SIDE_SIZE = 32 #cell size in source
 
-i_offset = 400
+i_offset = 150
 j_offset = 200
+
+WINDOW_SIZE = 550
 
 def rect(i: int, j: int):
     return i * CELL_SIDE_SIZE + i_offset, j * CELL_SIDE_SIZE + j_offset,CELL_SIDE_SIZE, CELL_SIDE_SIZE
@@ -16,6 +18,8 @@ BOMB_SOURCE = (SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE, SOU
 FLAG_SOURCE = (SOURCE_SIDE_SIZE * 3, SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE, SOURCE_SIDE_SIZE)
 WALL_SOURCE = (SOURCE_SIDE_SIZE * 1, SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE, SOURCE_SIDE_SIZE)
 FLOOR_SOURCE = (SOURCE_SIDE_SIZE * 0, SOURCE_SIDE_SIZE * 2, SOURCE_SIDE_SIZE, SOURCE_SIDE_SIZE)
+
+font_path = 'assets/font/PressStart2P-vaV7.ttf'
 
 image = None
 
@@ -33,15 +37,27 @@ game_table = np.zeros((MAX, MAX), dtype=int)
 
 def init_gui():
     pygame.init()
-    screen = pygame.display.set_mode((700, 700))
+    screen = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))
+
     global image
     try:
         image = pygame.image.load("assets/img/minesweeper.png").convert_alpha()
+        image = pygame.transform.scale(image, (128, 96))
     except pygame.error as e:
         print(f"Error al cargar la imagen: {e}")
         image = None
+        finish_gui()
+        return -1
+
     screen.fill((255, 255, 255))
+    font = pygame.font.Font(font_path, 42)
+    text = font.render('Minesweeper', True, (0, 0, 0))
+    TextRect = text.get_rect()
+    TextRect.center = (WINDOW_SIZE // 2, 85)
+    screen.blit(text, TextRect)
     pygame.display.set_caption('Minesweeper')
+    pygame.display.set_icon(image)
+
     return screen
 
 def finish_gui():
@@ -211,10 +227,10 @@ def minesweeper():
     table = np.random.choice(values, size=(MAX, MAX), p=probabilities)
 
     # Testing table
-    '''
-    table = np.zeros((MAX, MAX), dtype=int)
-    table[1,0]=-1
-    '''
+
+    # table = np.zeros((MAX, MAX), dtype=int)
+    # table[1,0]=-1
+
 
     screen=init_gui()
     draw_table(game_table,screen)
